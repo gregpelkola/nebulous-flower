@@ -7,9 +7,10 @@ export default defineConfig({
   server: {
     proxy: {
       '/expenses': {
-        target: 'http://localhost:5173',
+        target: 'http://localhost:5000',
         changeOrigin: true,
         secure: false,
+        logLevel: 'debug',
       },
     },
   },

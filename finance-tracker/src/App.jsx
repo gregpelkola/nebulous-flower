@@ -9,7 +9,7 @@ function App() {
 
   useEffect(() => {
     console.log('Fetching expenses...');
-    axios.get('http://localhost:5173/expenses')
+    axios.get('http://localhost:5000/expenses')
       .then(response => {
         console.log('Expenses fetched:', response.data);
         setExpenses(response.data);
@@ -19,7 +19,7 @@ function App() {
 
   const addExpense = () => {
     console.log('Adding expense:', { title, amount });
-    axios.post('http://localhost:5173/expenses', { title, amount })
+    axios.post('http://localhost:5000/expenses', { title, amount })
       .then(response => {
         console.log('Expense added:', response.data);
         setExpenses([...expenses, response.data]);
@@ -29,7 +29,7 @@ function App() {
 
   const deleteExpense = (id) => {
     console.log('Deleting expense with id:', id);
-    axios.delete(`http://localhost:5173/expenses/${id}`)
+    axios.delete(`http://localhost:5000/expenses/${id}`)
       .then(() => {
         console.log('Expense deleted');
         setExpenses(expenses.filter(expense => expense.id !== id));
