@@ -6,8 +6,8 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/expenses': {
-        target: 'http://localhost:5000',
+      '/api/expenses': {
+        target: 'http://localhost:5000', 
         changeOrigin: true,
         secure: false,
         logLevel: 'debug',

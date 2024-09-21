@@ -21,32 +21,29 @@ class Expense(db.Model):
 # CRUD operations
 
 # Get all expenses
-@app.route('/expenses', methods=['GET'])
+@app.route('/api/expenses', methods=['GET'])
 def get_expenses():
     expenses = Expense.query.all()
     return jsonify([{'id': e.id, 'title': e.title, 'amount': e.amount} for e in expenses])
 
 # Add a new expense
-@app.route('/expenses', methods=['POST'])
+@app.route('/api/expenses', methods=['POST'])
 def add_expense():
     data = request.get_json()
     new_expense = Expense(title=data['title'], amount=data['amount'])
     db.session.add(new_expense)
     db.session.commit()
-    return jsonify({'id': new_expense.id, 'title': new_expense.title, 'amount': new_expense.amount})
+    return jsonify({'id': new_expense.id, 'title': new_expense.title, 'amount': new_expense.amount}), 201
 
 # Delete an expense
-@app.route('/expenses/<int:id>', methods=['DELETE'])
+@app.route('/api/expenses/<int:id>', methods=['DELETE'])
 def delete_expense(id):
     expense = Expense.query.get(id)
     if expense:
         db.session.delete(expense)
         db.session.commit()
-        return jsonify({'message': 'Expense deleted'})
-    return jsonify({'message': 'Expense not found'}), 404
+        return '', 204
+    return jsonify({'error': 'Expense not found'}), 404
 
-# Run the app
 if __name__ == '__main__':
-    with app.app_context():
-        db.create_all()
     app.run(port=5000)
