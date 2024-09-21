@@ -11,4 +11,10 @@ function App() {
     .then(response => setExpenses(response.data))
     .catch(error => console.error(error)); 
   }, []);
+
+  const addExpense = () => {
+    axios.post("http://localhost:3001/expenses", { name, amount})
+    .then(response => setExpenses([...expenses, response.data]))
+    .catch(error => console.error(error));
+  };
 }
