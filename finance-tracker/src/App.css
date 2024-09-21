@@ -1,100 +1,112 @@
+/* Apply styles to the body, html, and root element */
 body, html, #root {
-  height: 100%;
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: url('./images/background.jpg') no-repeat center center fixed;
-  background-size: cover;
+  height: 100%; /* Set height to 100% */
+  margin: 0; /* Remove default margin */
+  font-family: Arial, sans-serif; /* Set font family */
+  background: url('./images/background.jpg') no-repeat center center fixed; /* Set background image */
+  background-size: cover; /* Cover the entire background */
 }
 
+/* Container styles */
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-  padding: 20px;
+  display: flex; /* Use flexbox layout */
+  flex-direction: column; /* Arrange children in a column */
+  justify-content: flex-start; /* Align children to the start */
+  align-items: center; /* Center children horizontally */
+  height: 100%; /* Set height to 100% */
+  width: 100%; /* Set width to 100% */
+  padding: 20px; /* Add padding */
 }
 
+/* Title styles */
 .title {
-  text-align: center;
-  width: 100%;
-  margin-top: 20px;
-  color: #e4c8c8;
-  font-size: 2em;
+  text-align: center; /* Center align text */
+  width: 100%; /* Set width to 100% */
+  margin-top: 20px; /* Add top margin */
+  color: #e4c8c8; /* Set text color */
+  font-size: 2em; /* Set font size */
 }
 
+/* Form container styles */
 .form-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  max-width: 600px;
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin-top: 20px;
+  display: flex; /* Use flexbox layout */
+  flex-direction: column; /* Arrange children in a column */
+  align-items: center; /* Center children horizontally */
+  width: 100%; /* Set width to 100% */
+  max-width: 600px; /* Set maximum width */
+  background-color: rgba(0, 0, 0, 0.7); /* Set background color with transparency */
+  padding: 20px; /* Add padding */
+  border-radius: 8px; /* Round the corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow */
+  margin-top: 20px; /* Add top margin */
 }
 
+/* Input styles */
 input {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  background-color: #333;
-  color: #fff;
-  border: 1px solid #555;
-  border-radius: 4px;
-  box-sizing: border-box;
+  width: 100%; /* Set width to 100% */
+  padding: 10px; /* Add padding */
+  margin: 10px 0; /* Add vertical margin */
+  background-color: #333; /* Set background color */
+  color: #fff; /* Set text color */
+  border: 1px solid #555; /* Set border */
+  border-radius: 4px; /* Round the corners */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
+/* Placeholder text styles */
 input::placeholder {
-  color: #bbb;
+  color: #bbb; /* Set placeholder text color */
 }
 
+/* Button styles */
 button {
-  padding: 10px 20px;
-  margin-top: 10px;
-  background-color: #333;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1em;
+  padding: 10px 20px; /* Add padding */
+  margin-top: 10px; /* Add top margin */
+  background-color: #333; /* Set background color */
+  color: #fff; /* Set text color */
+  border: none; /* Remove border */
+  border-radius: 4px; /* Round the corners */
+  cursor: pointer; /* Change cursor to pointer */
+  font-size: 1em; /* Set font size */
 }
 
+/* Button hover styles */
 button:hover {
-  background-color: #555;
+  background-color: #555; /* Change background color on hover */
 }
 
+/* Unordered list styles */
 ul {
-  list-style-type: none;
-  padding: 0;
-  width: 100%;
-  max-width: 600px;
-  margin-top: 20px;
+  list-style-type: none; /* Remove default list style */
+  padding: 0; /* Remove padding */
+  width: 100%; /* Set width to 100% */
+  max-width: 600px; /* Set maximum width */
+  margin-top: 20px; /* Add top margin */
 }
 
+/* List item styles */
 li {
-  background-color: rgba(0, 0, 0, 0.7);
-  color: #bbb;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 4px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7); /* Set background color with transparency */
+  color: #bbb; /* Set text color */
+  padding: 10px; /* Add padding */
+  margin: 10px 0; /* Add vertical margin */
+  border-radius: 4px; /* Round the corners */
+  display: flex; /* Use flexbox layout */
+  justify-content: space-between; /* Distribute space between children */
+  align-items: center; /* Center children vertically */
 }
 
+/* Button inside list item styles */
 li button {
-  background-color: #dc3545;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  padding: 5px 10px;
-  cursor: pointer;
+  background-color: #dc3545; /* Set background color */
+  color: #fff; /* Set text color */
+  border: none; /* Remove border */
+  border-radius: 4px; /* Round the corners */
+  padding: 5px 10px; /* Add padding */
+  cursor: pointer; /* Change cursor to pointer */
 }
 
+/* Button inside list item hover styles */
 li button:hover {
-  background-color: #c82333;
+  background-color: #c82333; /* Change background color on hover */
 }
