@@ -21,7 +21,6 @@ class Expense(db.Model):
 # Create the table
 if __name__ == '__main__':
     db.create_all()
-    app.run(debug=True)
 
 # CRUD operations
 
@@ -40,3 +39,16 @@ def add_expense():
     db.session.commit()
     return jsonify({ 'id': new_expense.id, 'title': new_expense.title, 'amount': new_expense.amount })
 
+# Delete an expense
+@app.route('/expenses/<int:id>', methods=['DELETE'])
+def delete_expense(id):
+    expense = Expense.query.get(id)
+    if expense:
+        db.session.delete(expense)
+        db.session.commit()
+        return jsonify({ 'message': 'Expense deleted' })
+    return jsonify({ 'message': 'Expense not found' }), 404
+
+# Run the app
+if __name__ == '__main__':
+    app.run(debug=True)
