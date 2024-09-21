@@ -24,5 +24,22 @@ function App() {
     .catch(error => console.error(error));
   };
 
-  
+  return (
+    <div>
+      <h1>Expense Tracker</h1>
+      <input type="text" placeholder="Name" value={name} onChange={e => setName(e.target.value)} />
+      <input type="number" placeholder="Amount" value={amount} onChange={e => setAmount(e.target.value)} />
+      <button onClick={addExpense}>Add Expense</button>
+      <ul>
+        {expenses.map(expense => (
+          <li key={expense.id}>
+            {expense.name}: ${expense.amount}
+            <button onClick={() => deleteExpense(expense.id)}>Delete</button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
+
+export default App;
