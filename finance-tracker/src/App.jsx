@@ -17,4 +17,12 @@ function App() {
     .then(response => setExpenses([...expenses, response.data]))
     .catch(error => console.error(error));
   };
+
+  const deleteExpense = (id) => {
+    axios.delete(`http://localhost:3001/expenses/${id}`)
+    .then(() => setExpenses(expenses.filter(expense => expense.id !== id)))
+    .catch(error => console.error(error));
+  };
+
+  
 }
