@@ -18,11 +18,6 @@ class Expense(db.Model):
     title = db.Column(db.String(80), nullable=False)
     amount = db.Column(db.Float, nullable=False)
 
-# Create the table
-if __name__ == '__main__':
-    with app.app_context():
-        db.create_all()
-
 # CRUD operations
 
 # Get all expenses
@@ -54,4 +49,4 @@ def delete_expense(id):
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
-    app.run(debug=True)
+    app.run(port=5173)
