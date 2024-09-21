@@ -22,3 +22,13 @@ class Expense(db.Model):
 if __name__ == '__main__':
     db.create_all()
     app.run(debug=True)
+
+# CRUD operations
+
+# Get all expenses
+@app.route('/expenses', methods=['GET'])
+def get_expenses():
+    expenses = Expense.query.all()
+    return jsonify([{ 'id': e.id, 'title': e.title, 'amount': e.amount } for e in expenses])
+
+# Add a new expense
